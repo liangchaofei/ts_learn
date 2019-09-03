@@ -4,7 +4,7 @@ import { runInContext } from "vm";
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-09-03 09:46:00
- * @LastEditTime: 2019-09-03 10:56:03
+ * @LastEditTime: 2019-09-03 10:57:01
  * @LastEditors: Please set LastEditors
  */
 
@@ -108,7 +108,7 @@ class Auto {
 interface AutoInterface extends Auto {
 
 }
-class C implements AutoInterface {
+class C1 implements AutoInterface {
     state = 1
 }
 //接口继承子类
