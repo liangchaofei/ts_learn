@@ -1,34 +1,28 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Button } from 'antd';
 
-interface Greeting {
+interface IProps{
     name: string;
-    firstName?: string;
-    lastName?: string;
 }
 
-interface HelloState {
-    count: number
-}
-
-class HelloClass extends Component<Greeting, HelloState> {
-    state: HelloState = {
-        count: 0
+class HelloClass extends React.Component<IProps>{
+    state = {
+        count: 0,
     }
-    static defaultProps = {
-        firstName: '',
-        lastName: ''
+    add = () => {
+        this.setState({
+            count: this.state.count + 1,
+        })
     }
-    render() {
+    render(){
+        const { count } = this.state;
         return (
             <>
-                <p>你点击了 {this.state.count} 次</p>
-                <Button onClick={() => {this.setState({count: this.state.count + 1})}}>
-                    Hello {this.props.name}
-                </Button>
+                <p>你点击了{count}次</p>
+                <Button onClick={this.add}>点击</Button>
+                <p>hello {this.props.name}</p>
             </>
         )
     }
 }
-
 export default HelloClass;

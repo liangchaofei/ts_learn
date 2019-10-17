@@ -1,9 +1,11 @@
-import React from 'react';
+import React from 'react'
+import { Button } from 'antd';
 
-interface Greeting {
+interface HelloProps {
     name: string;
 }
 
-const Hello = (props: Greeting) => <h1>Hello {props.name}</h1>
+const Hello = (props: HelloProps) => <Button>hello {props.name}</Button>
+
 
 export default Hello;
